@@ -11,6 +11,7 @@ import sun.java2d.SunGraphicsEnvironment;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.filechooser.FileSystemView;
 import java.awt.*;
@@ -28,7 +29,7 @@ public class Application extends JFrame implements ActionListener {
     // Components of the Form
     private Container c;
     private JLabel title;
-    private JLabel name;
+//    private JLabel name;
     private JTextField tname;
     private JLabel mno;
     private JTextField tmno;
@@ -58,12 +59,25 @@ public class Application extends JFrame implements ActionListener {
         aFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
+    private JLabel labelHost = new JLabel("Host:");
+    private JLabel labelPort = new JLabel("Port:");
+    private JLabel labelUsername = new JLabel("Username:");
+    private JLabel labelPassword = new JLabel("Password:");
+    private JLabel labelUploadPath = new JLabel("Upload path:");
+
+    private JTextField fieldHost = new JTextField(40);
+    private JTextField fieldPort = new JTextField(5);
+    private JTextField fieldUsername = new JTextField(30);
+    private JPasswordField fieldPassword = new JPasswordField(30);
+    private JTextField fieldUploadPath = new JTextField(30);
+    JTextField name = new JTextField(40), phone = new JTextField(40), address = new JTextField(20);
+
     public Application() {
 
         setTitle("Phần mềm demo");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         makeFrameFullSize(this);
-
+        setLayout(new BorderLayout());
         headerLabel = new JLabel("", JLabel.CENTER);
         statusLabel = new JLabel("", JLabel.CENTER);
         statusLabel.setSize(350, 100);
@@ -72,38 +86,32 @@ public class Application extends JFrame implements ActionListener {
         add(statusLabel);
 
         JPanel newPanel = new JPanel();
+        newPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         JScrollPane pane = new JScrollPane(newPanel);
-        newPanel.setLayout(new GridBagLayout());
-        addItem(newPanel, new JLabel("Name:"), 0, 0, 1, 1, GridBagConstraints.EAST);
-        addItem(newPanel, new JLabel("Phone:"), 0, 1, 1, 1, GridBagConstraints.EAST);
-        addItem(newPanel, new JLabel("Address:"), 0, 2, 1, 1, GridBagConstraints.EAST);
-        JTextField name = new JTextField(20), phone = new JTextField(10), address = new JTextField(20);
-
-        addItem(newPanel, name, 1, 0, 2, 1, GridBagConstraints.WEST);
-        addItem(newPanel, phone, 1, 1, 1, 1, GridBagConstraints.WEST);
-        addItem(newPanel, address, 1, 2, 2, 1, GridBagConstraints.WEST);
-        add(pane);
+        add(pane,  BorderLayout.CENTER);
+        newPanel.setBackground(Color.RED);
         pack();
+
+        newPanel.setLayout(new GridBagLayout());
+        addItem(newPanel, new JLabel("Mã hồ sơ:"), 0, 0, 1, 1, GridBagConstraints.WEST);
+        addItem(newPanel, new JLabel("Ngày lập hồ sơ:"), 0, 2, 1, 1, GridBagConstraints.WEST);
+
+        addItem(newPanel, name, 0, 1, 2, 1, GridBagConstraints.WEST);
+        addItem(newPanel, phone, 0, 3, 1, 1, GridBagConstraints.WEST);
+        GridBagConstraints constraints = new GridBagConstraints();
+        constraints.anchor = GridBagConstraints.WEST;
+        constraints.insets = new Insets(5, 5, 5, 5);
+
+
+
 
 
         //Fake
         List<DataBody> dataBodyList = DataBody.fakeDate();
 
-        DataBody dataBodyFirst = dataBodyList.get(0);
-
-        JPanel jPanelFirst = new JPanel();
-        JLabel jLabelFirst = new JLabel();
-        jLabelFirst.setText(dataBodyFirst.getTitle());
-        JTextField jTextFieldFirst = new JTextField();
-
-        jPanelFirst.add(jLabelFirst);
-        jPanelFirst.add(jTextFieldFirst);
-        jPanelFirst.setBorder(new EmptyBorder(10, 10, 10, 10));
-
-        newPanel.add(jPanelFirst);
-
         JPanel jPanelSecond = new JPanel();
-        jPanelSecond.setLayout(new GridLayout(0, 2));
+        jPanelSecond.setBackground(Color.GRAY);
+        jPanelSecond.setLayout(new GridLayout(0, 3));
         for (DataBody dataBody : dataBodyList) {
             JPanel jPanel = new JPanel();
             jPanel.setLayout(new GridLayout(2, 1));
@@ -119,11 +127,33 @@ public class Application extends JFrame implements ActionListener {
             jPanelSecond.add(jPanel);
 
 
+        }for (DataBody dataBody : dataBodyList) {
+            JPanel jPanel = new JPanel();
+            jPanel.setLayout(new GridLayout(2, 1));
+            JLabel jLabel = new JLabel();
+            jLabel.setText(dataBody.getTitle());
+
+            JTextField jTextField = new JTextField();
+            jPanel.add(jLabel);
+            jPanel.add(jTextField);
+
+            jPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+
+            jPanelSecond.add(jPanel);
+
+
         }
-        addItem(newPanel, jPanelSecond, 1, 2, 2, 1, GridBagConstraints.WEST);
+        constraints.gridx = 0;
+        constraints.gridy = 4;
+        constraints.weightx = 1.0;
+        constraints.anchor = GridBagConstraints.CENTER;
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        constraints.gridwidth = 2;
+        newPanel.add(jPanelSecond, constraints);
 
         setVisible(true);
     }
+
     private void addItem(JPanel p, JComponent c, int x, int y, int width, int height, int align) {
         GridBagConstraints gc = new GridBagConstraints();
         gc.gridx = x;
@@ -137,9 +167,41 @@ public class Application extends JFrame implements ActionListener {
         gc.fill = GridBagConstraints.NONE;
         p.add(c, gc);
     }
-    // method actionPerformed()
-    // to get the action performed
-    // by the user and act accordingly
+
+    private static JPanel createFormPanel() {
+        //initialize fields
+        JTextField nameField = new JTextField(10);
+        JTextField streetField = new JTextField(10),
+                cityField = new JTextField(5), zipCodeField = new JTextField(5);
+        JTextField phoneNumberField = new JTextField();
+        JTextField ageField = new JTextField();
+        JTextPane descriptionField = new JTextPane();
+        descriptionField.setBorder(new LineBorder(Color.gray));
+        JButton submitBtn = new JButton("Submit");
+
+        //create panel
+        JPanel panel = new JPanel();
+        panel.setBorder(new EmptyBorder(10, 10, 10, 10));
+        //using FormBuilder
+        FormBuilder.init(panel)
+                .add("Full Name", nameField, FormBuilder::spanX3)
+                .newRow()
+                .addLabelsAsRowHeading("", "Street", "City", "Zip Code")
+                .newRow()
+                .add("Address", streetField).add(cityField).add(zipCodeField)
+                .newRow()
+                .add("Phone", phoneNumberField).add("Age", ageField)
+                .newRow()
+                .add("Description", descriptionField, FormBuilder::spanX3, FormBuilder::spanY2,
+                        FormBuilder::fillParentY)
+                .newRow()
+                .newRow()
+                .skipColumns(2).add(submitBtn, FormBuilder::spanX2);
+
+        return panel;
+    }
+
+
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == sub) {
             FileNameExtensionFilter filter = new FileNameExtensionFilter("Chọn file", "docx");
