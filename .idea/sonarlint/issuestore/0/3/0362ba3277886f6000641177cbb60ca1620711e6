@@ -1,0 +1,102 @@
+
+A
+java:S1148â"#Use a logger to log this exception.(Ç’Çê8ó¨ÃÒ.
+ƒ
+java:S1488"`Immediately return this expression instead of assigning it to the temporary variable "document".(†êûÒøÿÿÿÿ8ó¨ÃÒ.
+K
+java:S1068'")Remove this unused "gengp" private field.(Ñ§ò™şÿÿÿÿ8ÂÖĞÃÒ.
+J
+java:S10681"(Remove this unused "tout" private field.( ìœşÿÿÿÿ8ÂÖĞÃÒ.
+W
+java:S1191
+"5Use classes from the Java API instead of Sun classes.(¡Ê×Óıÿÿÿÿ8èçÁÂÒ.
+_
+java:S3252;"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(«Î¢°ÿÿÿÿÿ8ÂÖĞÃÒ.
+D
+java:S1068,"'Remove this unused "add" private field.(Ø¦¦ª8ÂÖĞÃÒ.
+G
+java:S1659I"%Declare "address" on a separate line.(‡Â•‘şÿÿÿÿ8Ï¿ÍÃÒ.
+O
+java:S1068>"-Remove this unused "labelHost" private field.(ªÂ¿²üÿÿÿÿ8¾ÑÒÃÒ.
+G
+java:S1068"%Remove this unused "c" private field.(œîÇïúÿÿÿÿ8ÂÖĞÃÒ.
+J
+java:S1068%"(Remove this unused "male" private field.(Ğø¿‡úÿÿÿÿ8ÂÖĞÃÒ.
+Y
+java:S1128"7Remove this unused import 'had.com.view.SwingMenuDemo'.(Â™õıÿÿÿÿ8èçÁÂÒ.
+F
+java:S2387"*"title" is the name of a field in "Frame".(Éº~8èçÁÂÒ.
+W
+java:S1144«"4Remove this unused private "createFormPanel" method.(»¤¥®øÿÿÿÿ8ÂÖĞÃÒ.
+I
+java:S1068""'Remove this unused "mno" private field.(×¤‹Úıÿÿÿÿ8ÂÖĞÃÒ.
+M
+java:S1068A"1Remove this unused "labelPassword" private field.(’í{8ÂÖĞÃÒ.
+F
+java:S1148˜"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ó¨ÃÒ.
+E
+java:S1068."(Remove this unused "term" private field.(•‹Î8ÂÖĞÃÒ.
+N
+java:S1068@"1Remove this unused "labelUsername" private field.(¼™™ñ8ÂÖĞÃÒ.
+V	java:S106–"9Replace this use of System.out or System.err by a logger.(ÄÌéÛ8ÂÖĞÃÒ.
+O
+java:S1068H"3Remove this unused "fieldUploadPath" private field.(¢òêX8ÂÖĞÃÒ.
+D
+java:S1068("'Remove this unused "dob" private field.(½Ú •8ÂÖĞÃÒ.
+E
+java:S1068")Remove this unused "title" private field.(Éº~8ÂÖĞÃÒ.
+`
+java:S1128
+">Remove this unused import 'sun.java2d.SunGraphicsEnvironment'.(¡Ê×Óıÿÿÿÿ8èçÁÂÒ.
+S
+java:S1751„"5Remove this "break" statement or make it conditional.(›ûä·8ÂÖĞÃÒ.
+E
+java:S1604Í"(Make this anonymous inner class a lambda(Û© f8ó¨ÃÒ.
+Y	java:S125Ö"<This block of commented-out lines of code should be removed.(Äš·¼8ÂÖĞÃÒ.
+L
+java:S10683"*Remove this unused "resadd" private field.(‹©…àúÿÿÿÿ8ÂÖĞÃÒ.
+E
+java:S1068-"(Remove this unused "tadd" private field.(•Ş¦‰8ÂÖĞÃÒ.
+O
+java:S1068?"-Remove this unused "labelPort" private field.(³äƒÓûÿÿÿÿ8¾ÑÒÃÒ.
+E
+java:S1659I"#Declare "phone" on a separate line.(‡Â•‘şÿÿÿÿ8¢¤ĞÃÒ.
+h	java:S112‰"FDefine and throw a dedicated exception instead of using a generic one.(¨Å¹şÿÿÿÿ8ó¨ÃÒ.
+J
+java:S1659¯"'Declare "cityField" on a separate line.(ù²üÕûÿÿÿÿ8ÂÖĞÃÒ.
+V	java:S106’"9Replace this use of System.out or System.err by a logger.(ÄÌéÛ8ÂÖĞÃÒ.
+F
+java:S1604Ù"(Make this anonymous inner class a lambda(İÌŞ8ó¨ÃÒ.
+M
+java:S1659¯"*Declare "zipCodeField" on a separate line.(ù²üÕûÿÿÿÿ8ÂÖĞÃÒ.
+I
+java:S10682"'Remove this unused "res" private field.(ßçˆÓøÿÿÿÿ8ÂÖĞÃÒ.
+E
+java:S1068+"(Remove this unused "year" private field.(‹Œ§8ÂÖĞÃÒ.
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8èçÁÂÒ.
+]	java:S125 "<This block of commented-out lines of code should be removed.(Á‡°íúÿÿÿÿ8ÂÖĞÃÒ.
+V	java:S106á"9Replace this use of System.out or System.err by a logger.(ö¬8ÂÖĞÃÒ.
+^
+java:S3252R"AUse static access with "javax.swing.SwingConstants" for "CENTER".(…÷Ï¤8ÂÖĞÃÒ.
+F
+java:S1068*")Remove this unused "month" private field.(¸…Ú8ÂÖĞÃÒ.
+L
+java:S1068$"*Remove this unused "gender" private field.(Ò÷¼¹ûÿÿÿÿ8ÂÖĞÃÒ.
+L
+java:S1068&"*Remove this unused "female" private field.(Íıª‘üÿÿÿÿ8ÂÖĞÃÒ.
+E
+java:S1068)"(Remove this unused "date" private field.(˜‹Ûˆ8ÂÖĞÃÒ.
+^
+java:S3252Q"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ô¿ØÖ8ÂÖĞÃÒ.
+X	java:S110"<This class has 6 parents which is greater than 5 authorized.(Å«Óƒ8èçÁÂÒ.
+O
+java:S1068D"-Remove this unused "fieldHost" private field.(øÁ³Ãÿÿÿÿÿ8¾ÑÒÃÒ.
+U
+java:S1068B"3Remove this unused "labelUploadPath" private field.(µ©ñ°ùÿÿÿÿ8ÂÖĞÃÒ.
+S
+java:S1068F"1Remove this unused "fieldUsername" private field.(–¿‚õûÿÿÿÿ8ÂÖĞÃÒ.
+N
+java:S1068G"1Remove this unused "fieldPassword" private field.(«ôİÚ8ÂÖĞÃÒ.
+O
+java:S1068E"-Remove this unused "fieldPort" private field.(à¶æåøÿÿÿÿ8¾ÑÒÃÒ.

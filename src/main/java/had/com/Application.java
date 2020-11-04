@@ -89,37 +89,52 @@ public class Application extends JFrame implements ActionListener {
         newPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         JScrollPane pane = new JScrollPane(newPanel);
         add(pane,  BorderLayout.CENTER);
-        newPanel.setBackground(Color.RED);
+        newPanel.setBackground(new Color(0x93D5F6));
+
         pack();
 
         newPanel.setLayout(new GridBagLayout());
-        addItem(newPanel, new JLabel("Mã hồ sơ:"), 0, 0, 1, 1, GridBagConstraints.WEST);
-        addItem(newPanel, new JLabel("Ngày lập hồ sơ:"), 0, 2, 1, 1, GridBagConstraints.WEST);
 
-        addItem(newPanel, name, 0, 1, 2, 1, GridBagConstraints.WEST);
-        addItem(newPanel, phone, 0, 3, 1, 1, GridBagConstraints.WEST);
+        JPanel jpanelFirst = new JPanel();
+        JLabel jLabel = new JLabel("Ngay lap ho so");
+        jLabel.setPreferredSize(new Dimension(80,30));// Width, Height
+
+        jpanelFirst.add(jLabel);
+        JTextField jTextField01 = new JTextField(30);
+        Dimension d = jTextField01.getPreferredSize();
+        d.height = 30;
+        jTextField01.setMaximumSize(d);
+        jTextField01.setPreferredSize(d);
+        jTextField01.setSize(d);
+        jpanelFirst.add(jTextField01);
+        addItem(newPanel, jpanelFirst, 0, 0 , 1, 1, GridBagConstraints.WEST);
+
+        JPanel jpanelFirst1 = new JPanel();
+        JLabel jLabel1 = new JLabel("Ngay lap ");
+        jLabel1.setPreferredSize(new Dimension(80,30));// Width, Height
+
+        jpanelFirst1.add(jLabel1);
+        jpanelFirst1.add(new JTextField(30));
+        addItem(newPanel, jpanelFirst1, 0, 1 , 1, 1, GridBagConstraints.WEST);
+
         GridBagConstraints constraints = new GridBagConstraints();
         constraints.anchor = GridBagConstraints.WEST;
         constraints.insets = new Insets(5, 5, 5, 5);
-
-
-
-
 
         //Fake
         List<DataBody> dataBodyList = DataBody.fakeDate();
 
         JPanel jPanelSecond = new JPanel();
-        jPanelSecond.setBackground(Color.GRAY);
+        jPanelSecond.setBackground(new Color(0x93D5F6));
         jPanelSecond.setLayout(new GridLayout(0, 3));
         for (DataBody dataBody : dataBodyList) {
             JPanel jPanel = new JPanel();
             jPanel.setLayout(new GridLayout(2, 1));
-            JLabel jLabel = new JLabel();
-            jLabel.setText(dataBody.getTitle());
+            JLabel jLabel2 = new JLabel();
+            jLabel2.setText(dataBody.getTitle());
 
             JTextField jTextField = new JTextField();
-            jPanel.add(jLabel);
+            jPanel.add(jLabel2);
             jPanel.add(jTextField);
 
             jPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -130,11 +145,11 @@ public class Application extends JFrame implements ActionListener {
         }for (DataBody dataBody : dataBodyList) {
             JPanel jPanel = new JPanel();
             jPanel.setLayout(new GridLayout(2, 1));
-            JLabel jLabel = new JLabel();
+            JLabel jLabel3 = new JLabel();
             jLabel.setText(dataBody.getTitle());
 
             JTextField jTextField = new JTextField();
-            jPanel.add(jLabel);
+            jPanel.add(jLabel3);
             jPanel.add(jTextField);
 
             jPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
