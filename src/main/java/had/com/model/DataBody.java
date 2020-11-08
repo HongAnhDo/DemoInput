@@ -9,7 +9,8 @@ public class DataBody {
     String title;
     String id;
     String valueDefault;
-    int typeData;
+    int typeData = 0;
+    // 0: text - 1:date
 
 
     public DataBody(String content, String title) {
@@ -89,6 +90,31 @@ public class DataBody {
                 "<<advance_money_char>>"
         );
 
+        List<Integer> types = Arrays.asList(
+                0,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0
+        );
         List<String> titles = Arrays.asList(
                 "Số hợp đồng:",
                 "Ngày lập HĐ:",
@@ -114,12 +140,14 @@ public class DataBody {
                 "Tạm ứng",
                 "Số tiền bằng chữ"
         );
-        int i= 0;
-        for(String content: contents){
+        int i = 0;
+        for (String content : contents) {
             DataBody dataBody = new DataBody();
             dataBody.setContent(content);
             dataBody.setTitle(titles.get(i));
+            dataBody.setTypeData(types.get(i));
             dataBodyList.add(dataBody);
+
             i++;
         }
         return dataBodyList;

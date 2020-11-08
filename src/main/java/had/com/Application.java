@@ -1,7 +1,12 @@
 package had.com;
 
+import had.com.converter.DateLabelFormatter;
+import had.com.converter.DateLabelShortFormatter;
 import had.com.model.DataBody;
 import had.com.view.SwingMenuDemo;
+import net.sourceforge.jdatepicker.impl.JDatePanelImpl;
+import net.sourceforge.jdatepicker.impl.JDatePickerImpl;
+import net.sourceforge.jdatepicker.impl.UtilDateModel;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFParagraph;
 import org.apache.poi.xwpf.usermodel.XWPFRun;
@@ -21,37 +26,18 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
-public class Application extends JFrame implements ActionListener {
+public class Application extends JFrame {
     private static final String SOURCE_FILE = "C:/Users/H/Desktop/had/HĐ_Cục-Tần-số-vô-tuyến-điện_MITSUBISHI_79c-0677.docx";
     private static final String OUTPUT_FILE = "C:/Users/H/Desktop/had/test.docx";
-    // Components of the Form
-    private Container c;
-    private JLabel title;
-//    private JLabel name;
-    private JTextField tname;
-    private JLabel mno;
-    private JTextField tmno;
-    private JLabel gender;
-    private JRadioButton male;
-    private JRadioButton female;
-    private ButtonGroup gengp;
-    private JLabel dob;
-    private JComboBox date;
-    private JComboBox month;
-    private JComboBox year;
-    private JLabel add;
-    private JTextArea tadd;
-    private JCheckBox term;
-    private JButton sub;
-    private JButton reset;
-    private JTextArea tout;
-    private JLabel res;
-    private JTextArea resadd;
+
 
     private JLabel headerLabel;
     private JLabel statusLabel;
+
+    private List<JComponent> arrJComponents = new ArrayList<>();
 
     private void makeFrameFullSize(JFrame aFrame) {
         Rectangle r = GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
@@ -59,63 +45,64 @@ public class Application extends JFrame implements ActionListener {
         aFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
-    private JLabel labelHost = new JLabel("Host:");
-    private JLabel labelPort = new JLabel("Port:");
-    private JLabel labelUsername = new JLabel("Username:");
-    private JLabel labelPassword = new JLabel("Password:");
-    private JLabel labelUploadPath = new JLabel("Upload path:");
-
-    private JTextField fieldHost = new JTextField(40);
-    private JTextField fieldPort = new JTextField(5);
-    private JTextField fieldUsername = new JTextField(30);
-    private JPasswordField fieldPassword = new JPasswordField(30);
-    private JTextField fieldUploadPath = new JTextField(30);
-    JTextField name = new JTextField(40), phone = new JTextField(40), address = new JTextField(20);
-
     public Application() {
+        initMenu();
 
-        setTitle("Phần mềm demo");
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        makeFrameFullSize(this);
-        setLayout(new BorderLayout());
-        headerLabel = new JLabel("", JLabel.CENTER);
-        statusLabel = new JLabel("", JLabel.CENTER);
-        statusLabel.setSize(350, 100);
+        JPanel mainPanel = new JPanel();
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        JScrollPane pane = new JScrollPane(mainPanel);
+        pane.getVerticalScrollBar().setUnitIncrement(16);
 
-        add(headerLabel);
-        add(statusLabel);
-
-        JPanel newPanel = new JPanel();
-        newPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        JScrollPane pane = new JScrollPane(newPanel);
-        add(pane,  BorderLayout.CENTER);
-        newPanel.setBackground(new Color(0x93D5F6));
-
+        add(pane, BorderLayout.CENTER);
+        mainPanel.setBackground(new Color(0x93D5F6));
+        mainPanel.setLayout(new BorderLayout());
+        mainPanel.setBorder(BorderFactory.createEmptyBorder(30, 10, 30,10));
         pack();
 
-        newPanel.setLayout(new GridBagLayout());
+        JPanel pnFirst = new JPanel();
+        pnFirst.setLayout(new GridBagLayout());
+        pnFirst.setBackground(Color.RED);
 
-        JPanel jpanelFirst = new JPanel();
-        JLabel jLabel = new JLabel("Ngay lap ho so");
-        jLabel.setPreferredSize(new Dimension(80,30));// Width, Height
+        JPanel pnNumberContract = new JPanel();
+        pnNumberContract.setBackground(Color.RED);
 
-        jpanelFirst.add(jLabel);
-        JTextField jTextField01 = new JTextField(30);
-        Dimension d = jTextField01.getPreferredSize();
+        JLabel lbNumberContract = new JLabel("Số hợp đồng");
+        lbNumberContract.setPreferredSize(new Dimension(120, 30));// Width, Height
+        JTextField tfNumberContract = new JTextField(30);
+
+        Dimension d = tfNumberContract.getPreferredSize();
         d.height = 30;
-        jTextField01.setMaximumSize(d);
-        jTextField01.setPreferredSize(d);
-        jTextField01.setSize(d);
-        jpanelFirst.add(jTextField01);
-        addItem(newPanel, jpanelFirst, 0, 0 , 1, 1, GridBagConstraints.WEST);
+        tfNumberContract.setMaximumSize(d);
+        tfNumberContract.setPreferredSize(d);
+        tfNumberContract.setSize(d);
 
-        JPanel jpanelFirst1 = new JPanel();
-        JLabel jLabel1 = new JLabel("Ngay lap ");
-        jLabel1.setPreferredSize(new Dimension(80,30));// Width, Height
+        pnNumberContract.add(lbNumberContract);
+        pnNumberContract.add(tfNumberContract);
+        addItem(pnFirst, pnNumberContract, 0, 0, 1, 1, GridBagConstraints.WEST);
 
-        jpanelFirst1.add(jLabel1);
-        jpanelFirst1.add(new JTextField(30));
-        addItem(newPanel, jpanelFirst1, 0, 1 , 1, 1, GridBagConstraints.WEST);
+        JPanel pnDateCreated = new JPanel();
+        pnDateCreated.setBackground(Color.GREEN);
+
+        JLabel lbDateCreated = new JLabel("Ngày lập hợp đồng");
+        lbDateCreated.setPreferredSize(new Dimension(120, 30));// Width, Height
+
+        UtilDateModel model = new UtilDateModel();
+        JDatePanelImpl datePanel = new JDatePanelImpl(model);
+        JDatePickerImpl dpDateCreated = new JDatePickerImpl(datePanel, new DateLabelFormatter());
+        dpDateCreated.setMaximumSize(d);
+        dpDateCreated.setPreferredSize(d);
+        dpDateCreated.setSize(d);
+        dpDateCreated.setTextEditable(true);
+
+        pnDateCreated.add(lbDateCreated);
+        pnDateCreated.add(dpDateCreated);
+
+
+
+        addItem(pnFirst, pnDateCreated, 0, 1, 1, 1, GridBagConstraints.WEST);
+        mainPanel.add(pnFirst, BorderLayout.NORTH);
+        arrJComponents.add(tfNumberContract);
+        arrJComponents.add(dpDateCreated);
 
         GridBagConstraints constraints = new GridBagConstraints();
         constraints.anchor = GridBagConstraints.WEST;
@@ -123,50 +110,127 @@ public class Application extends JFrame implements ActionListener {
 
         //Fake
         List<DataBody> dataBodyList = DataBody.fakeDate();
-
         JPanel jPanelSecond = new JPanel();
-        jPanelSecond.setBackground(new Color(0x93D5F6));
-        jPanelSecond.setLayout(new GridLayout(0, 3));
-        for (DataBody dataBody : dataBodyList) {
-            JPanel jPanel = new JPanel();
-            jPanel.setLayout(new GridLayout(2, 1));
-            JLabel jLabel2 = new JLabel();
-            jLabel2.setText(dataBody.getTitle());
+        jPanelSecond.setBackground(Color.BLACK);
+        jPanelSecond.setLayout(new GridLayout(4, 1));
 
-            JTextField jTextField = new JTextField();
-            jPanel.add(jLabel2);
-            jPanel.add(jTextField);
+        for (int i = 0; i < 3; i++) {
+            JPanel pnColumn = new JPanel();
+            pnColumn.setLayout(new GridLayout(4, 2));
+            pnColumn.setBorder(BorderFactory.createEmptyBorder(30, 0, 0,0));
+            for (int j = 0; j < 7; j++) {
+                int idx = i * 7 + 2 + j;
+                if(idx >= dataBodyList.size()){
+                    break;
+                }
+                DataBody dataBody = dataBodyList.get(idx);
 
-            jPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+                JPanel pnRow = new JPanel();
+                pnRow.setLayout(new BorderLayout());
+                pnRow.setBorder(BorderFactory.createEmptyBorder(0, 0, 5,20));
 
-            jPanelSecond.add(jPanel);
+                JLabel lb = new JLabel();
+                lb.setText(dataBody.getTitle());
+                pnRow.add(lb, BorderLayout.NORTH);
+
+                UtilDateModel modelRow = new UtilDateModel();
+                JDatePanelImpl datePanelRow = new JDatePanelImpl(modelRow);
+                if (dataBody.getTypeData() == 2) {
+                    JDatePickerImpl dp = new JDatePickerImpl(datePanelRow, new DateLabelShortFormatter());
+//                    pnRow.add(dp, BorderLayout.CENTER);
+                    JPanel jPanel = new JPanel();
+                    jPanel.setLayout(null);
+                    jPanel.add(dp);
+                    dp.setPreferredSize(new Dimension(140,30));
+
+                    dp.getComponent(0).setPreferredSize(new Dimension(100,30)); //JFormattedTextField
+                    dp.getComponent(1).setPreferredSize(new Dimension(40,30));//JButton
+                    dp.setSize(300, 30);
+                    dp.setTextEditable(true);
+                    pnRow.add(jPanel, BorderLayout.CENTER);
+
+                    arrJComponents.add(dp);
+                } else if (dataBody.getTypeData() == 1) {
+                    JDatePickerImpl dp = new JDatePickerImpl(datePanelRow, new DateLabelFormatter());
+                    JPanel jPanel = new JPanel();
+                    jPanel.setLayout(null);
+                    jPanel.add(dp);
+                    dp.setPreferredSize(new Dimension(120,20));
+
+                    dp.getComponent(0).setPreferredSize(new Dimension(100,20)); //JFormattedTextField
+                    dp.getComponent(1).setPreferredSize(new Dimension(20,20));//JButton
+                    dp.setSize(300, 60);
+                    pnRow.add(jPanel, BorderLayout.CENTER);
+
+//                    pnRow.add(dp, BorderLayout.CENTER);
+
+                    arrJComponents.add(dp);
+                } else {
+//                    JTextArea tf = new JTextArea(1, 1);
+                    JTextField tf = new JTextField();
+
+//                    tf.setLineWrap(true);
+                    tf.setMaximumSize(d);
+                    tf.setAutoscrolls(true);
+                    tf.setFont(tf.getFont().deriveFont(14f));
+                    tf.setSize(tf.getWidth(), 80);
+                    tf.setBorder(BorderFactory.createCompoundBorder(
+                            tf.getBorder(),
+                            BorderFactory.createEmptyBorder(5, 5, 5, 5)));
+//                    JScrollPane scrollPane = new JScrollPane(tf);
+//                    scrollPane.setWheelScrollingEnabled(false);
+//                    pnRow.add(scrollPane, BorderLayout.CENTER);
+                    pnRow.add(tf, BorderLayout.CENTER);
+                    arrJComponents.add(tf);
+                }
 
 
-        }for (DataBody dataBody : dataBodyList) {
-            JPanel jPanel = new JPanel();
-            jPanel.setLayout(new GridLayout(2, 1));
-            JLabel jLabel3 = new JLabel();
-            jLabel.setText(dataBody.getTitle());
+                pnColumn.add(pnRow);
 
-            JTextField jTextField = new JTextField();
-            jPanel.add(jLabel3);
-            jPanel.add(jTextField);
 
-            jPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
-
-            jPanelSecond.add(jPanel);
+            }
+            jPanelSecond.add(pnColumn);
 
 
         }
+
+        JPanel pnColumn = new JPanel();
+        pnColumn.setLayout(new GridLayout(4, 2));
+        pnColumn.setBorder(BorderFactory.createEmptyBorder(30, 0, 0,0));
+
         constraints.gridx = 0;
         constraints.gridy = 4;
         constraints.weightx = 1.0;
         constraints.anchor = GridBagConstraints.CENTER;
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.gridwidth = 2;
-        newPanel.add(jPanelSecond, constraints);
+
+
+        JPanel pnAction = new JPanel();
+        pnAction.setLayout(null);
+        pnAction.setSize(pnAction.getWidth(), 100);
+        JButton btn= new JButton("Tạo hồ sơ");
+        btn.setSize(200, 40);
+        pnAction.add(btn);
+        jPanelSecond.add(pnAction);
+        mainPanel.add(jPanelSecond, BorderLayout.CENTER);
+
+
 
         setVisible(true);
+    }
+
+    private void initMenu() {
+        //header
+        setTitle("Phần mềm demo");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        makeFrameFullSize(this);
+        setLayout(new BorderLayout());
+        headerLabel = new JLabel("", JLabel.CENTER);
+        statusLabel = new JLabel("", JLabel.CENTER);
+        statusLabel.setSize(350, 100);
+        add(headerLabel);
+        add(statusLabel);
     }
 
     private void addItem(JPanel p, JComponent c, int x, int y, int width, int height, int align) {
@@ -214,39 +278,6 @@ public class Application extends JFrame implements ActionListener {
                 .skipColumns(2).add(submitBtn, FormBuilder::spanX2);
 
         return panel;
-    }
-
-
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == sub) {
-            FileNameExtensionFilter filter = new FileNameExtensionFilter("Chọn file", "docx");
-
-            JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
-            jfc.setFileFilter(filter);
-
-            jfc.setCurrentDirectory(new File(SOURCE_FILE));
-            int returnValue = jfc.showOpenDialog(null);
-            // int returnValue = jfc.showSaveDialog(null);
-
-            if (returnValue == JFileChooser.APPROVE_OPTION) {
-                File selectedFile = jfc.getSelectedFile();
-                tmno.setText(selectedFile.getAbsolutePath());
-            }
-        } else if (e.getSource() == reset) {
-            XWPFDocument doc = null;
-            try {
-                doc = this.openDocument(tmno.getText());
-            } catch (Exception ex) {
-                System.out.println(ex);
-                ex.printStackTrace();
-
-            }
-            if (doc != null) {
-                doc = this.replaceText(doc, "<<name>>", tname.getText());
-                this.saveDocument(doc, OUTPUT_FILE);
-            }
-        }
-
     }
 
 
