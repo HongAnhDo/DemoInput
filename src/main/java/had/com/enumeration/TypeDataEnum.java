@@ -1,9 +1,10 @@
 package had.com.enumeration;
 
 public enum TypeDataEnum {
-    JTextField(0, "JTextField"),
-    JTextArea(1, "JTextArea");
-
+    TEXT_FIELD(0, "JTextField"),
+    TEXT_AREA(1, "JTextArea"),
+    TEXT_FORMATTED(2, "JFormattedTextField"),
+    DATE_SHORT(3, "");
     int type;
     String name;
 

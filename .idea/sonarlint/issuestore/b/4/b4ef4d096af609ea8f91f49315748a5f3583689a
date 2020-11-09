@@ -1,18 +1,18 @@
 
-W
-java:S3252""AUse static access with "javax.swing.SwingConstants" for "CENTER".(…÷Ï¤
 p
 java:S1450"ZRemove the "headerLabel" field and declare it as a local variable in the relevant methods.(ëã÷ˆ
 P
 java:S1161&":Add the "@Override" annotation above this method signature(„¤œ”
-W
-java:S3252!"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ô¿ØÖ
-V	java:S110"<This class has 6 parents which is greater than 5 authorized.(ð’ïÔÿÿÿÿÿ
-Q	java:S125"<This block of commented-out lines of code should be removed.(õ¨ÅØ
 q
 java:S1450
 "[Remove the "controlPanel" field and declare it as a local variable in the relevant methods.(Ûüž­
-D
-java:S1604^"(Make this anonymous inner class a lambda(Û© f8‡Ø…Ù.
+W
+java:S3252!"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ô¿ØÖ
+Q	java:S125"<This block of commented-out lines of code should be removed.(õ¨ÅØ
 E
 java:S1604j"(Make this anonymous inner class a lambda(ÝÌÞ8‡Ø…Ù.
+D
+java:S1604^"(Make this anonymous inner class a lambda(Û© f8‡Ø…Ù.
+V	java:S110"<This class has 6 parents which is greater than 5 authorized.(ð’ïÔÿÿÿÿÿ
+W
+java:S3252""AUse static access with "javax.swing.SwingConstants" for "CENTER".(…÷Ï¤
