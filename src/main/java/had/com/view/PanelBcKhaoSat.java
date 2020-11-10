@@ -27,6 +27,12 @@ public class PanelBcKhaoSat extends JPanel {
     private Color colorBackground = Color.WHITE;
     private List<JComponent> arrJComponents = new ArrayList<>();
     private List<DataBody> dataBodyList = new ArrayList<>();
+    private HashMap<String, String> phuongtien = new HashMap<>();
+    private HashMap<String, String> thongSoKyThuat = new HashMap<>();
+    private List<String> hienTrang = new ArrayList<>();
+    private PanelTable pnTablePT;
+    private PanelTable pnTableThongso;
+    private JTextArea tfHienTrang;
     private Font fontLabel = null;
 
     public PanelBcKhaoSat() {
@@ -34,9 +40,6 @@ public class PanelBcKhaoSat extends JPanel {
         dataBodyList = DataBody.createDataFormKs();
         setLayout(new BorderLayout());
 
-        JPanel pnFirst = new JPanel();
-        pnFirst.setBackground(colorBackground);
-        pnFirst.setLayout(new GridBagLayout());
 
         Dimension d = new Dimension(400, 30);
         d.height = 30;
@@ -60,10 +63,14 @@ public class PanelBcKhaoSat extends JPanel {
         lbTitle.setFont(font);
         pnLabel.add(lbTitle);
 
-        addItem(pnFirst, pnLabel, 0, 0, 1, 1, GridBagConstraints.WEST);
-        addItem(pnFirst, pnDateCreated, 0, 1, 1, 1, GridBagConstraints.WEST);
-        addItem(pnFirst, pnNumberHD, 0, 2, 1, 1, GridBagConstraints.WEST);
-        addItem(pnFirst, pnDateHD, 0, 3, 1, 1, GridBagConstraints.WEST);
+        JPanel pnFirst = new JPanel();
+        pnFirst.setBackground(colorBackground);
+        pnFirst.setLayout(new GridBagLayout());
+
+        MyHandle.addItem(pnFirst, pnLabel, 0, 0, 1, 1, GridBagConstraints.WEST);
+        MyHandle.addItem(pnFirst, pnDateCreated, 0, 1, 1, 1, GridBagConstraints.WEST);
+        MyHandle.addItem(pnFirst, pnNumberHD, 0, 2, 1, 1, GridBagConstraints.WEST);
+        MyHandle.addItem(pnFirst, pnDateHD, 0, 3, 1, 1, GridBagConstraints.WEST);
         add(pnFirst, BorderLayout.NORTH);
 
 
@@ -115,38 +122,45 @@ public class PanelBcKhaoSat extends JPanel {
 
         JPanel pnAction = new JPanel();
         pnAction.setBackground(colorBackground);
-        pnAction.setLayout(new BoxLayout(pnAction, BoxLayout.Y_AXIS));
-        pnAction.setSize(pnAction.getWidth(), 100);
-        int w = pnAction.getWidth();
-
-        JPanel pnLastInfoParent = new JPanel();
-        pnLastInfoParent.setLayout(new GridLayout(1, 2));
-        pnLastInfoParent.setBackground(colorBackground);
-        for (int i = 0; i < 1; i++) {
-            JPanel pnLastInfo = new JPanel();
-            pnLastInfo.setBackground(colorBackground);
-            pnLastInfo.setSize(pnBody.getWidth() / 2, pnLastInfo.getHeight());
-            pnLastInfo.setLayout(new BoxLayout(pnLastInfo, BoxLayout.Y_AXIS));
-
-            int indexField = 10 + 2 * i;
-
-            for (int j = 0; indexField < dataBodyList.size(); j++) {
-                JPanel pnRow = createRowField(d, j, indexField, dataBodyList.get(indexField), false);
-                pnRow.setBackground(colorBackground);
-                pnRow.setSize(w, pnRow.getHeight());
-                pnRow.setBorder(BorderFactory.createCompoundBorder(
-                        pnRow.getBorder(),
-                        BorderFactory.createEmptyBorder(0, 15, 0, 15)));
-                pnLastInfo.add(pnRow);
-                indexField += 1;
-
-            }
-            pnLastInfoParent.add(pnLastInfo);
-        }
-        pnAction.add(pnLastInfoParent);
         pnAction.setBorder(BorderFactory.createCompoundBorder(
                 pnColumn.getBorder(),
                 BorderFactory.createEmptyBorder(0, 0, 200, 0)));
+        pnAction.setLayout(new BoxLayout(pnAction, BoxLayout.Y_AXIS));
+        pnAction.setSize(pnAction.getWidth(), 100);
+        pnSecond.add(pnAction);
+
+        JPanel pnPhapLy = createRowField(d, 10, 10, dataBodyList.get(10), false);
+        pnPhapLy.setBackground(colorBackground);
+        pnAction.add(pnPhapLy);
+
+        pnTablePT = new PanelTable("PHƯƠNG TIỆN");
+        pnTablePT.setSize(800, 200);
+        pnAction.add(pnTablePT);
+
+        pnTableThongso = new PanelTable("THÔNG SỐ KỸ THUẬT");
+        pnTableThongso.setSize(800, 200);
+        pnAction.add(pnTableThongso);
+
+        JPanel pnHienTrang = new JPanel();
+        pnHienTrang.setBackground(colorBackground);
+        pnHienTrang.setLayout(new BoxLayout(pnHienTrang, BoxLayout.Y_AXIS));
+
+        pnHienTrang.add(new JTextField("Hiện trạng tài sản"));
+        tfHienTrang = new JTextArea(4, 1);
+        tfHienTrang.setLineWrap(true);
+        tfHienTrang.setMaximumSize(d);
+        tfHienTrang.setAutoscrolls(true);
+        tfHienTrang.setFont(tfHienTrang.getFont().deriveFont(14f));
+        tfHienTrang.setSize(tfHienTrang.getWidth(), 80);
+        tfHienTrang.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        JScrollPane scrollPane = new JScrollPane(tfHienTrang);
+
+        JPanel pnTitleHienTrang = new JPanel();
+        pnTitleHienTrang.setLayout(new BorderLayout());
+        pnTitleHienTrang.setBackground(colorBackground);
+        pnTitleHienTrang.add(new JLabel("Hiện trạng"), BorderLayout.WEST);
+        pnAction.add(pnTitleHienTrang);
+        pnAction.add(scrollPane);
 
         JPanel pnButton = new JPanel();
         pnButton.setBackground(colorBackground);
@@ -158,13 +172,10 @@ public class PanelBcKhaoSat extends JPanel {
         btnPdf.setPreferredSize(new Dimension(200, 30));
         btnPdf.setName("PDF");
         pnButton.add(btnPdf);
-
         pnAction.add(pnButton);
 
-        pnSecond.add(pnAction);
-
         add(pnSecond, BorderLayout.CENTER);
-        setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 400));
+        setBorder(BorderFactory.createEmptyBorder(0, 20, 0, 200));
         addClickButton(btn);
         addClickButton(btnPdf);
 
@@ -224,24 +235,12 @@ public class PanelBcKhaoSat extends JPanel {
         return pnDateCreated;
     }
 
-    private void addItem(JPanel p, JComponent c, int x, int y, int width, int height, int align) {
-        GridBagConstraints gc = new GridBagConstraints();
-        gc.gridx = x;
-        gc.gridy = y;
-        gc.gridwidth = width;
-        gc.gridheight = height;
-        gc.weightx = 100.0;
-        gc.weighty = 100.0;
-        gc.insets = new Insets(5, 5, 5, 5);
-        gc.anchor = align;
-        gc.fill = GridBagConstraints.NONE;
-        p.add(c, gc);
-    }
 
     private void addClickButton(JButton btn) {
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                pnTablePT.getValueOfTable();
                 HashMap<String, String> mapData = MyHandle.getValueFormHashMap(arrJComponents);
 
                 JFrame parentFrame = new JFrame();
@@ -261,10 +260,12 @@ public class PanelBcKhaoSat extends JPanel {
         });
     }
 
-    private void handleSaveFileDocOrPdf(HashMap<String, String> mapData, String fileToSave, boolean isPDF) {
+    private void handleSaveFileDocOrPdf(HashMap<String, String> mapData,
+                                        String fileToSave, boolean isPDF) {
         XWPFDocument doc = null;
         URL resource = getClass().getClassLoader().getResource("ks.docx");
-        MyHandle.handleSaveFile(mapData, fileToSave, isPDF, doc, resource);
+        JTextArea tfPhapLy = (JTextArea) arrJComponents.get(arrJComponents.size() -1);
+        MyHandle.handleSaveFileKS(mapData, fileToSave, isPDF, resource,tfPhapLy.getText(), pnTablePT.getValueOfTable(), pnTableThongso.getValueOfTable(), tfHienTrang.getText());
     }
 
     private void addEventHandleChangePrice() {
@@ -410,4 +411,6 @@ public class PanelBcKhaoSat extends JPanel {
         }
         return pnRow;
     }
+
+
 }

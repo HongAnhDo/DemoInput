@@ -324,7 +324,104 @@ public class DataBody {
         }
         return dataBodyList;
     }
+    public static List<DataBody> createDataFormCT() {
+        List<DataBody> dataBodyList = new ArrayList<>();
 
+        List<String> contents = Arrays.asList(
+                "<<bc_num_contract>>",
+                "<<bc_today>>",
+                "<<ct_num_contract>>",
+                "<<ct_today>>",
+                "<<hd_num_contract>>",
+                "<<hd_today>>",
+
+                "<<a_side>>",
+                "<<a_address>>",
+                "<<a_phone>>",
+                "<<a_represent>>",
+                "<<a_position>>",
+
+                "<<time_pricing>>",
+                "<<accets_pricing>>",
+                "<<as>>",
+                "<<as_char>>"
+        );
+
+        List<Integer> types = Arrays.asList(
+                MyUtil.TYPE_TEXT_FIELD,
+                MyUtil.TYPE_DATE,
+                MyUtil.TYPE_TEXT_FIELD,
+                MyUtil.TYPE_DATE,
+                MyUtil.TYPE_TEXT_FIELD,
+                MyUtil.TYPE_DATE,
+
+                MyUtil.TYPE_TEXT_FIELD,
+                MyUtil.TYPE_TEXT_FIELD,
+                MyUtil.TYPE_TEXT_FIELD,
+                MyUtil.TYPE_TEXT_FIELD,
+                MyUtil.TYPE_TEXT_FIELD,
+
+                MyUtil.TYPE_DATE_SHORT,
+                MyUtil.TYPE_TEXT_AREA,
+                MyUtil.TYPE_FORMATTED_TEXT_FIELD,
+                MyUtil.TYPE_TEXT_FIELD
+        );
+        List<String> titles = Arrays.asList(
+                "Báo cáo thẩm định số:",
+                "Ngày lập báo cáo",
+                "Chứng thư thẩm định số",
+                "Ngày lập chứng thư",
+                "Hợp đồng thẩm định số",
+                "Ngày lập hợp đồng",
+
+                "Tên khách hàng",
+                "Địa chỉ khách hàng",
+                "Số điện thoại khách hàng",
+                "Người đại diện",
+                "Chức vụ",
+
+                "Thời điểm thẩm định",
+                "Tài sản thẩm định giá",
+                "Đơn giá thẩm định",
+                "Đơn giá thẩm định bằng chữ"
+        );
+
+        LocalDate currentdate = LocalDate.now();
+        String dateNow = dateFormatter.format(new Date());
+//        String dateNow = "ngày "+String.format("%02d", currentdate.getDayOfMonth())
+//        +" tháng "+" năm 2020";
+        List<String> valueDefaults = Arrays.asList(
+                "",
+                "",
+                "",
+                dateNow,
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                ""
+        );
+
+        List<Boolean> listRequire = new ArrayList<>();
+        contents.stream().forEach(item -> listRequire.add(true));
+        int i = 0;
+        for (String content : contents) {
+            DataBody dataBody = new DataBody();
+            dataBody.setContent(content);
+            dataBody.setTitle(titles.get(i));
+            dataBody.setTypeData(types.get(i));
+            dataBody.setValueDefault(valueDefaults.get(i));
+            dataBodyList.add(dataBody);
+            i++;
+        }
+        return dataBodyList;
+    }
 
     public static List<DataBody> createDataNghiemThu() {
         List<DataBody> dataBodyList = new ArrayList<>();

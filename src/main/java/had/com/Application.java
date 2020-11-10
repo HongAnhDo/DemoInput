@@ -1,8 +1,5 @@
 package had.com;
-import had.com.view.PanelBaoCao;
-import had.com.view.PanelBcKhaoSat;
-import had.com.view.PanelHopDong;
-import had.com.view.PanelThamDinh;
+import had.com.view.*;
 
 import javax.swing.*;
 import javax.swing.plaf.FontUIResource;
@@ -90,36 +87,26 @@ public class Application extends JFrame {
         //create a menu bar
         final JMenuBar menuBar = new JMenuBar();
         //create menus
-        JMenu fileMenu = new JMenu("File");
-        JMenu editMenu = new JMenu("Edit");
-        final JMenu aboutMenu = new JMenu("About");
-        final JMenu linkMenu = new JMenu("Links");
+        JMenu fileMenu = new JMenu("Menu");
 
         //create menu items
-        JMenuItem newMenuItem = new JMenuItem("New");
+
+        JMenuItem hdMenuItem = new JMenuItem("Hợp đồng thẩm định");
+        hdMenuItem.setActionCommand("New");
+
+        JMenuItem ctMenuItem = new JMenuItem("Chứng thư thẩm định");
+        ctMenuItem.setActionCommand("New");
+
+        JMenuItem newMenuItem = new JMenuItem("Báo cáo thẩm định");
         newMenuItem.setMnemonic(KeyEvent.VK_N);
         newMenuItem.setActionCommand("New");
 
-        JMenuItem openMenuItem = new JMenuItem("Open");
+        JMenuItem openMenuItem = new JMenuItem("Biên bản nghiệm thu");
         openMenuItem.setActionCommand("Open");
 
-        JMenuItem saveMenuItem = new JMenuItem("Save");
+        JMenuItem saveMenuItem = new JMenuItem("Biên bản Khảo sát");
         saveMenuItem.setActionCommand("Save");
 
-        JMenuItem saveMenuItem2 = new JMenuItem("Save");
-        saveMenuItem2.setActionCommand("Save2");
-
-        JMenuItem exitMenuItem = new JMenuItem("Exit");
-        exitMenuItem.setActionCommand("Exit");
-
-        JMenuItem cutMenuItem = new JMenuItem("Cut");
-        cutMenuItem.setActionCommand("Cut");
-
-        JMenuItem copyMenuItem = new JMenuItem("Copy");
-        copyMenuItem.setActionCommand("Copy");
-
-        JMenuItem pasteMenuItem = new JMenuItem("Paste");
-        pasteMenuItem.setActionCommand("Paste");
 
         Application.MenuItemListener menuItemListener = new Application.MenuItemListener();
 
@@ -129,6 +116,28 @@ public class Application extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 pane.getViewport().removeAll();
                 pane.setViewportView(new PanelBaoCao());
+                revalidate();
+                repaint();
+            }
+        });
+
+        hdMenuItem.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pane.getViewport().removeAll();
+                pane.setViewportView(new PanelHopDong());
+                revalidate();
+                repaint();
+            }
+        });
+
+        ctMenuItem.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pane.getViewport().removeAll();
+                pane.setViewportView(new PanelChungThu());
                 revalidate();
                 repaint();
             }
@@ -153,58 +162,21 @@ public class Application extends JFrame {
                 repaint();
             }
         });
-        exitMenuItem.addActionListener(menuItemListener);
-        cutMenuItem.addActionListener(menuItemListener);
-        copyMenuItem.addActionListener(menuItemListener);
-        pasteMenuItem.addActionListener(menuItemListener);
 
-        final JCheckBoxMenuItem showWindowMenu = new JCheckBoxMenuItem("Show About", true);
-        showWindowMenu.addItemListener(new ItemListener() {
-            public void itemStateChanged(ItemEvent e) {
 
-                if (showWindowMenu.getState()) {
-                    menuBar.add(aboutMenu);
-                } else {
-                    menuBar.remove(aboutMenu);
-                }
-
-            }
-        });
-        final JRadioButtonMenuItem showLinksMenu = new JRadioButtonMenuItem(
-                "Show Links", true);
-        showLinksMenu.addItemListener(new ItemListener() {
-            public void itemStateChanged(ItemEvent e) {
-
-                if (menuBar.getMenu(3) != null) {
-                    menuBar.remove(linkMenu);
-                    repaint();
-                } else {
-                    menuBar.add(linkMenu);
-                    repaint();
-                }
-            }
-        });
         //add menu items to menus
         fileMenu.add(newMenuItem);
         fileMenu.add(openMenuItem);
         fileMenu.add(saveMenuItem);
-        fileMenu.add(saveMenuItem2);
-        fileMenu.addSeparator();
-        fileMenu.add(showWindowMenu);
-        fileMenu.addSeparator();
-        fileMenu.add(showLinksMenu);
-        fileMenu.addSeparator();
-        fileMenu.add(exitMenuItem);
+        fileMenu.add(hdMenuItem);
+        fileMenu.add(ctMenuItem);
 
-        editMenu.add(cutMenuItem);
-        editMenu.add(copyMenuItem);
-        editMenu.add(pasteMenuItem);
+        fileMenu.addSeparator();
+        fileMenu.addSeparator();
+        fileMenu.addSeparator();
 
         //add menu to menubar
         menuBar.add(fileMenu);
-        menuBar.add(editMenu);
-        menuBar.add(aboutMenu);
-        menuBar.add(linkMenu);
 
         //add menubar to the frame
         setJMenuBar(menuBar);

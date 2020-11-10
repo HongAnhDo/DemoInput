@@ -278,7 +278,7 @@ public class PanelBaoCao extends JPanel {
     private void handleSaveFileDocOrPdf(HashMap<String, String> mapData, String fileToSave, boolean isPDF) {
         XWPFDocument doc = null;
         URL resource = getClass().getClassLoader().getResource("Bc.docx");
-        MyHandle.handleSaveFile(mapData, fileToSave, isPDF, doc, resource);
+        MyHandle.handleSaveFile(mapData, fileToSave, isPDF, resource);
     }
 
     private void addEventHandleChangePrice() {

@@ -17,9 +17,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.beans.PropertyChangeEvent;
-import java.beans.PropertyChangeListener;
-import java.math.BigDecimal;
 import java.net.URL;
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -281,7 +278,7 @@ public class PanelThamDinh extends JPanel {
     private void handleSaveFileDocOrPdf(HashMap<String, String> mapData, String fileToSave, boolean isPDF) {
         XWPFDocument doc = null;
         URL resource = getClass().getClassLoader().getResource("tlhd.docx");
-        MyHandle.handleSaveFile(mapData, fileToSave, isPDF, doc, resource);
+        MyHandle.handleSaveFile(mapData, fileToSave, isPDF, resource);
     }
 
     private void addEventHandleChangePrice() {
