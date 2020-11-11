@@ -14,6 +14,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.*;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -133,11 +134,19 @@ public class MyHandle {
         } catch (Exception ex) {
             System.out.println(ex);
             ex.printStackTrace();
-            showMessageDialog(null, "Có lỗi xảy ra");
+            try {
+                showMessageDialog(null, "Có lỗi xảy ra" + resource.toURI().getPath());
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+            }
             return;
         }
         if (doc == null) {
-            showMessageDialog(null, "Có lỗi xảy ra");
+            try {
+                showMessageDialog(null, "Có lỗi xảy ra "+  resource.toURI().getPath());
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
+            }
             return;
         }
         doc = replaceListText(doc, mapData);

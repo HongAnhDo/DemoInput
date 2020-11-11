@@ -17,6 +17,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.InputStream;
 import java.net.URL;
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -278,6 +279,8 @@ public class PanelBaoCao extends JPanel {
     private void handleSaveFileDocOrPdf(HashMap<String, String> mapData, String fileToSave, boolean isPDF) {
         XWPFDocument doc = null;
         URL resource = getClass().getClassLoader().getResource("Bc.docx");
+       InputStream inputStream = getClass().getResourceAsStream("/Bc.docx");
+
         MyHandle.handleSaveFile(mapData, fileToSave, isPDF, resource);
     }
 

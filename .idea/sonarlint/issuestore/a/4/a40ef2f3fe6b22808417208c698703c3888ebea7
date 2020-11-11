@@ -1,0 +1,23 @@
+
+b
+java:S1854š"?Remove this useless assignment to local variable "inputStream".(èØ ûÿÿÿÿ8§Öî–Û.
+W	java:S125“"<This block of commented-out lines of code should be removed.(²¥Ÿÿûÿÿÿÿ
+?
+java:S1481˜"(Remove this unused "doc" local variable.(³œ‘¦
+D
+java:S1604"(Make this anonymous inner class a lambda(¥ÁÍ€ûÿÿÿÿ
+I
+java:S1948".Make "dataBodyList" transient or serializable.(É¥¨Ãúÿÿÿÿ
+W	java:S125´"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+Y	java:S125¹"<This block of commented-out lines of code should be removed.(œæªä8Ì£ß–Û.
+^	java:S125 "<This block of commented-out lines of code should be removed.(íÃÑâúÿÿÿÿ8Ì£ß–Û.
+S
+java:S1481š"0Remove this unused "inputStream" local variable.(èØ ûÿÿÿÿ8§Öî–Û.
+^	java:S125Â"<This block of commented-out lines of code should be removed.(¼è÷ïøÿÿÿÿ8Ì£ß–Û.
+R	java:S125·"<This block of commented-out lines of code should be removed.(æ¿‚ø
+W	java:S125«"<This block of commented-out lines of code should be removed.(•Ç“Áşÿÿÿÿ
+I
+java:S1172Ì"&Remove these unused method parameters.(ğ±¸ºøÿÿÿÿ8Ì£ß–Û.
+Y	java:S125­"<This block of commented-out lines of code should be removed.(œæªä8Ì£ß–Û.
+W	java:S125Å"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
+Y	java:S125¦"<This block of commented-out lines of code should be removed.(²¢òÍ8Ì£ß–Û.

@@ -1,64 +1,33 @@
 
-_
-java:S3252ã"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ô¿ØÖ8´ï±ËÚ.
-]	java:S110!"<This class has 6 parents which is greater than 5 authorized.(õç‡ëüÿÿÿÿ8´ï±ËÚ.
-_
-java:S3252G"=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(«Î¢°ÿÿÿÿÿ8´ï±ËÚ.
-u
-java:S3776ò"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(ŠÊ­»ÿÿÿÿÿ8´ï±ËÚ.
-Z	java:S106-"9Replace this use of System.out or System.err by a logger.(ï·ö’øÿÿÿÿ8´ï±ËÚ.
-J
-java:S1481§"'Remove this unused "r2" local variable.(§¤Éåşÿÿÿÿ8¢â»ËÚ.
-A
-java:S1148¬"#Use a logger to log this exception.(Ç’Çê8´ï±ËÚ.
-V	java:S106Ñ"9Replace this use of System.out or System.err by a logger.(ÄÌéÛ8¢â»ËÚ.
-]
-java:S1161ê":Add the "@Override" annotation above this method signature(Ü¶ş´üÿÿÿÿ8¢â»ËÚ.
-¤
-java:S1186Æ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ğéËøÿÿÿÿ8¢â»ËÚ.
-K
-java:S1604ó"(Make this anonymous inner class a lambda(¥ÁÍ€ûÿÿÿÿ8´ï±ËÚ.
-V	java:S106«"9Replace this use of System.out or System.err by a logger.(ö¬8´ï±ËÚ.
-F
-java:S1148Ó"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¢â»ËÚ.
-I
-java:S1172û"&Remove these unused method parameters.(ğ±¸ºøÿÿÿÿ8¢â»ËÚ.
-[	java:S106Ù"9Replace this use of System.out or System.err by a logger.(ü§«ñşÿÿÿÿ8îàÌËÚ.
-Y
-java:S1854§"6Remove this useless assignment to local variable "r2".(§¤Éåşÿÿÿÿ8¢â»ËÚ.
-K	java:S108İ")Either remove or fill this block of code.(“Êí½ıÿÿÿÿ8¢â»ËÚ.
-Q
-java:S1068#"/Remove this unused "OUTPUT_FILE" private field.(¼©“şÿÿÿÿ8´ï±ËÚ.
-S
-java:S1144ù"0Remove this unused private "replaceText" method.(ÎÜŠøÿÿÿÿ8¢â»ËÚ.
-[	java:S106Û"9Replace this use of System.out or System.err by a logger.(…šÒšÿÿÿÿÿ8¢â»ËÚ.
-E	java:S1089")Either remove or fill this block of code.(”ı¾8´ï±ËÚ.
-ƒ
-java:S1488È"`Immediately return this expression instead of assigning it to the temporary variable "document".(†êûÒøÿÿÿÿ8¢â»ËÚ.
-_
-java:S3252ä"AUse static access with "javax.swing.SwingConstants" for "CENTER".(…÷Ï¤8¢â»ËÚ.
-k
-java:S5361…"HReplace this call to "replaceAll()" by a call to the "replace()" method.(¤¾®¸ùÿÿÿÿ8´ï±ËÚ.
-S
-java:S1751"5Remove this "break" statement or make it conditional.(›ûä·8¢â»ËÚ.
-h	java:S112Ä"FDefine and throw a dedicated exception instead of using a generic one.(¨Å¹şÿÿÿÿ8¢â»ËÚ.
-F
-java:S1604Ó"(Make this anonymous inner class a lambda(µ™¡Ó8®ë²ËÚ.
-F
-java:S1604Ÿ"(Make this anonymous inner class a lambda(İÌŞ8¢â»ËÚ.
-u
-java:S3776¡"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(©õæ‡üÿÿÿÿ8¢â»ËÚ.
-[	java:S106Œ"9Replace this use of System.out or System.err by a logger.(ò•Æ†ıÿÿÿÿ8´ï±ËÚ.
-F
-java:S1604Ç"(Make this anonymous inner class a lambda(…§ÿò8´ï±ËÚ.
-E
-java:S1604“"(Make this anonymous inner class a lambda(Û© f8¢â»ËÚ.
 w
-java:S1450>"ZRemove the "headerLabel" field and declare it as a local variable in the relevant methods.(ëã÷ˆ8´ï±ËÚ.
+java:S1450'"ZRemove the "headerLabel" field and declare it as a local variable in the relevant methods.(ëã÷ˆ8´ï±ËÚ.
+_
+java:S3252."=Use static access with "java.awt.Frame" for "MAXIMIZED_BOTH".(«Î¢°ÿÿÿÿÿ8´ï±ËÚ.
+^
+java:S3252B"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ô¿ØÖ8´ï±ËÚ.
+E	java:S108"")Either remove or fill this block of code.(”ı¾8´ï±ËÚ.
+^
+java:S3252C"AUse static access with "javax.swing.SwingConstants" for "CENTER".(…÷Ï¤8¢â»ËÚ.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ï·ö’øÿÿÿÿ8´ï±ËÚ.
 K
-java:S1604ì"(Make this anonymous inner class a lambda(Õ‰²­ıÿÿÿÿ8¢â»ËÚ.
-S
-java:S1751½"5Remove this "break" statement or make it conditional.(›ûä·8¢â»ËÚ.
+java:S1604»"(Make this anonymous inner class a lambda(¤©Òâüÿÿÿÿ8¢â»ËÚ.
+K	java:S108À")Either remove or fill this block of code.(“Êí½ıÿÿÿÿ8¢â»ËÚ.
+X	java:S110"<This class has 6 parents which is greater than 5 authorized.(«üÊ8á„¹–Û.
+J
+java:S1604q"(Make this anonymous inner class a lambda(„âŒîùÿÿÿÿ8á„¹–Û.
+J
+java:S1604|"(Make this anonymous inner class a lambda(ğ¹„ßüÿÿÿÿ8á„¹–Û.
 K
-java:S1604Ø"(Make this anonymous inner class a lambda(¤©Òâüÿÿÿÿ8¢â»ËÚ.
-V	java:S106Í"9Replace this use of System.out or System.err by a logger.(ÄÌéÛ8¢â»ËÚ.
+java:S1604‡"(Make this anonymous inner class a lambda(˜”ğûÿÿÿÿ8á„¹–Û.
+F
+java:S1604‘"(Make this anonymous inner class a lambda(Äú„ò8á„¹–Û.
+K
+java:S1604›"(Make this anonymous inner class a lambda(ùõæÊøÿÿÿÿ8á„¹–Û.
+a
+java:S1854o"DRemove this useless assignment to local variable "menuItemListener".(ÁÌû8á„¹–Û.
+R
+java:S1481o"5Remove this unused "menuItemListener" local variable.(ÁÌû8á„¹–Û.
+T
+java:S1144"2Remove this unused private "pathFileStore" method.(¦Ìêûÿÿÿÿÿ8á„¹–Û.
+R
+java:S1144"5Remove this unused private "getPathFileStore" method.(“åÕ¹8á„¹–Û.

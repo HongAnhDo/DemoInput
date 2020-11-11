@@ -1,0 +1,114 @@
+
+ˆ
+java:S1319X"mThe return type of this method should be an interface such as "Map" rather than the implementation "HashMap".(İŒ™òúÿÿÿÿ
+„
+java:S1319}"oThe type of the "mapData" object should be an interface such as "Map" rather than the implementation "HashMap".(‚ğÇl
+†
+java:S1319²"oThe type of the "mapData" object should be an interface such as "Map" rather than the implementation "HashMap".(óÅ´­
+‹
+java:S1319ç"oThe type of the "mapData" object should be an interface such as "Map" rather than the implementation "HashMap".(»³İıÿÿÿÿ
+o
+java:S1192ˆ"SDefine a constant instead of duplicating this literal "CÃ³ lá»—i xáº£y ra" 6 times.(—ıè¨üÿÿÿÿ
+‡
+java:S1192¯"kDefine a constant instead of duplicating this literal "Táº¡o file thÃ nh cÃ´ng\nÄÆ°á»ng dáº«n: " 3 times.(²ÎÑòıÿÿÿÿ
+l
+java:S1192¬"UDefine a constant instead of duplicating this literal "CÃ³ lá»—i xáº£y ra: " 3 times.(ĞÏïÂ
+b
+java:S1192’"FDefine a constant instead of duplicating this literal ".docx" 9 times.(‰¢õ”ıÿÿÿÿ
+f
+java:S1192Æ"PDefine a constant instead of duplicating this literal "Times New Roman" 4 times.(‹›Î=
+W	java:S107ç"<Method has 8 parameters, which is greater than 7 authorized.(»³İıÿÿÿÿ
+\	java:S112÷"FDefine and throw a dedicated exception instead of using a generic one.(ñ·Ø«
+U
+java:S1155è">Use isEmpty() to check whether the collection is empty or not.(õŸàä
+U
+java:S1155ˆ">Use isEmpty() to check whether the collection is empty or not.(õŸàä
+U
+java:S1155©">Use isEmpty() to check whether the collection is empty or not.(õŸàä
+>
+java:S1148s"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+:
+java:S1148‡"#Use a logger to log this exception.(Ç’Çê
+?
+java:S1148«"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+:
+java:S1148¼"#Use a logger to log this exception.(Ç’Çê
+?
+java:S1148à"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+:
+java:S1148ò"#Use a logger to log this exception.(Ç’Çê
+?
+java:S1148ş"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+?
+java:S1148€"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+?
+java:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+?
+java:S1148©"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+D
+java:S1604·"(Make this anonymous inner class a lambda(Ô¶µÿşÿÿÿÿ
+O
+java:S4973m"9Use the "equals" method if value comparison was intended.(—Å¹å
+`
+java:S2583À"DChange this condition so that it does not always evaluate to "false"(°‹ˆ°ûÿÿÿÿ
+`
+java:S2583‹"DChange this condition so that it does not always evaluate to "false"(°‹ˆ°ûÿÿÿÿ
+`
+java:S2583ö"DChange this condition so that it does not always evaluate to "false"(°‹ˆ°ûÿÿÿÿ
+|
+java:S1488ù"`Immediately return this expression instead of assigning it to the temporary variable "document".(†êûÒøÿÿÿÿ
+K
+java:S1128"5Remove this unused import 'java.text.ParseException'.(ñ®ï•
+n	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¡ç
+?
+java:S2885"*Make "dateFormatter" an instance variable.(¢Ÿ¿
+c
+java:S5361h"HReplace this call to "replaceAll()" by a call to the "replace()" method.(¤¾®¸ùÿÿÿÿ
+S	java:S106x"9Replace this use of System.out or System.err by a logger.(ò•Æ†ıÿÿÿÿ
+O	java:S106†"9Replace this use of System.out or System.err by a logger.(ö¬
+a
+java:S3027“"JPut single-quotes around '.' to use the faster "lastIndexOf(char)" method.(¤¸ğ×
+a
+java:S3027™"JPut single-quotes around '.' to use the faster "lastIndexOf(char)" method.(¤¸ğ×
+a
+java:S3027"JPut single-quotes around '.' to use the faster "lastIndexOf(char)" method.(¤¸ğ×
+D
+java:S1172´"-Remove this unused method parameter "pathKs".(”Ü€Í
+O	java:S106»"9Replace this use of System.out or System.err by a logger.(ö¬
+a
+java:S3027È"JPut single-quotes around '.' to use the faster "lastIndexOf(char)" method.(¤¸ğ×
+a
+java:S3027Î"JPut single-quotes around '.' to use the faster "lastIndexOf(char)" method.(¤¸ğ×
+a
+java:S3027Ò"JPut single-quotes around '.' to use the faster "lastIndexOf(char)" method.(¤¸ğ×
+O	java:S106ñ"9Replace this use of System.out or System.err by a logger.(ö¬
+\
+java:S2147ÿ"ECombine this catch with the one at line 253, which has the same body.(”Ğ¿¡
+a
+java:S3027…"JPut single-quotes around '.' to use the faster "lastIndexOf(char)" method.(¤¸ğ×
+a
+java:S3027‹"JPut single-quotes around '.' to use the faster "lastIndexOf(char)" method.(¤¸ğ×
+a
+java:S3027"JPut single-quotes around '.' to use the faster "lastIndexOf(char)" method.(¤¸ğ×
+I
+java:S1172®"-Remove this unused method parameter "phaply".(à“• ûÿÿÿÿ
+V
+java:S1854¹":Remove this useless assignment to local variable "oldRow".(Ê¶•ãûÿÿÿÿ
+S
+java:S1854¯"7Remove this useless assignment to local variable "pos".(Èîºƒøÿÿÿÿ
+n
+java:S3776®"RRefactor this method to reduce its Cognitive Complexity from 29 to the 15 allowed.(à“• ûÿÿÿÿ
+O
+java:S1197•"8Move the array designator from the variable to the type.(”Ä‹ë
+V
+java:S1161¶":Add the "@Override" annotation above this method signature(äîÏ‡øÿÿÿÿ
+]
+java:S1854Ç"ARemove this useless assignment to local variable "textParagraph".(ú³Éşÿÿÿÿ
+i
+java:S3776Ä"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(Ã³‘¼
+O	java:S106È"9Replace this use of System.out or System.err by a logger.(‡¬Ãº
+G
+java:S1481¹"+Remove this unused "oldRow" local variable.(Ê¶•ãûÿÿÿÿ
+N
+java:S1481Ç"2Remove this unused "textParagraph" local variable.(ú³Éşÿÿÿÿ
+R	java:S125ë"<This block of commented-out lines of code should be removed.(ÿùƒ

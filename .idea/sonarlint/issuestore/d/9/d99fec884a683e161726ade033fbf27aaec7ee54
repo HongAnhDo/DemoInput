@@ -1,0 +1,63 @@
+
+p
+java:S1192e"SDefine a constant instead of duplicating this literal "<<accets_pricing>>" 3 times.(Êëß£8Œ…¹–Û.
+j
+java:S1192Œ"LDefine a constant instead of duplicating this literal "Chá»©c vá»¥" 9 times.(á“öæ8Œ…¹–Û.
+n
+java:S1192"PDefine a constant instead of duplicating this literal "Äiá»‡n thoáº¡i" 4 times.(ùØÛ¨8Œ…¹–Û.
+p
+java:S1192Î"MDefine a constant instead of duplicating this literal "Ã”ng (BÃ ) 1" 3 times.(÷‰ç³şÿÿÿÿ8Œ…¹–Û.
+q
+java:S1192‹"NDefine a constant instead of duplicating this literal "Äáº¡i diá»‡n" 4 times.(şëóúÿÿÿÿ8Œ…¹–Û.
+r
+java:S1192X"PDefine a constant instead of duplicating this literal "<<a_represent>>" 4 times.(¨Æ™Ïüÿÿÿÿ8Œ…¹–Û.
+p
+java:S1192Z"NDefine a constant instead of duplicating this literal "<<a_address>>" 4 times.(·•óøúÿÿÿÿ8Œ…¹–Û.
+n
+java:S1192["LDefine a constant instead of duplicating this literal "<<a_phone>>" 4 times.(§éÂ–ÿÿÿÿÿ8Œ…¹–Û.
+r
+java:S1192×"TDefine a constant instead of duplicating this literal "<<hd_num_contract>>" 4 times.(©ÆÛ“8Œ…¹–Û.
+n
+java:S1192f"QDefine a constant instead of duplicating this literal "<<time_pricing>>" 3 times.(öøÕö8Œ…¹–Û.
+h
+java:S1192W"KDefine a constant instead of duplicating this literal "<<a_side>>" 5 times.(ÏÎŞ¹8Œ…¹–Û.
+k
+java:S1192"MDefine a constant instead of duplicating this literal "Äá»‹a chá»‰" 4 times.(Å¢Õ´8Œ…¹–Û.
+w
+java:S1192Õ"TDefine a constant instead of duplicating this literal "<<ct_num_contract>>" 3 times.(ò µùÿÿÿÿ8Œ…¹–Û.
+j
+java:S1192Ö"MDefine a constant instead of duplicating this literal "<<ct_today>>" 3 times.(œ“8Œ…¹–Û.
+k
+java:S1192"MDefine a constant instead of duplicating this literal "TÃ i khoáº£n" 4 times.(î³¢8Œ…¹–Û.
+k
+java:S1192Ø"MDefine a constant instead of duplicating this literal "<<hd_today>>" 4 times.(ñ•œ¿8Œ…¹–Û.
+l
+java:S1192Y"ODefine a constant instead of duplicating this literal "<<a_position>>" 4 times.(ºŸîÖ8Œ…¹–Û.
+v	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(®Î¯¡8Œ…¹–Û.
+G
+java:S2885"*Make "dateFormatter" an instance variable.(“ÕÑ°8Œ…¹–Û.
+]
+java:S1854¡"?Remove this useless assignment to local variable "currentdate".(éË¿‡8Œ…¹–Û.
+]
+java:S1854"?Remove this useless assignment to local variable "currentdate".(éË¿‡8Œ…¹–Û.
+]
+java:S1854„"?Remove this useless assignment to local variable "currentdate".(éË¿‡8Œ…¹–Û.
+]
+java:S1854ü"?Remove this useless assignment to local variable "currentdate".(éË¿‡8Œ…¹–Û.
+]
+java:S1854×"?Remove this useless assignment to local variable "currentdate".(éË¿‡8Œ…¹–Û.
+N
+java:S1481¡"0Remove this unused "currentdate" local variable.(éË¿‡8Œ…¹–Û.
+N
+java:S1481"0Remove this unused "currentdate" local variable.(éË¿‡8Œ…¹–Û.
+N
+java:S1481„"0Remove this unused "currentdate" local variable.(éË¿‡8Œ…¹–Û.
+N
+java:S1481ü"0Remove this unused "currentdate" local variable.(éË¿‡8Œ…¹–Û.
+N
+java:S1481×"0Remove this unused "currentdate" local variable.(éË¿‡8Œ…¹–Û.
+Y	java:S125¤"<This block of commented-out lines of code should be removed.(ßË¹î8Œ…¹–Û.
+Y	java:S125 "<This block of commented-out lines of code should be removed.(ßË¹î8Œ…¹–Û.
+Y	java:S125‡"<This block of commented-out lines of code should be removed.(ßË¹î8Œ…¹–Û.
+Y	java:S125ÿ"<This block of commented-out lines of code should be removed.(ßË¹î8Œ…¹–Û.
+Y	java:S125Ú"<This block of commented-out lines of code should be removed.(ßË¹î8Œ…¹–Û.

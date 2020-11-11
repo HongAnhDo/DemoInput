@@ -1,0 +1,22 @@
+
+>
+java:S1604h"(Make this anonymous inner class a lambda(ÎùÔò
+>
+java:S1604y"(Make this anonymous inner class a lambda(»„¦²
+?
+java:S1604›"(Make this anonymous inner class a lambda(õé—
+b
+java:S1128"GRemove this unused import 'javax.swing.table.DefaultTableCellRenderer'.(ÈĞ“ìşÿÿÿÿ
+E
+java:S1128"*Remove this unused import 'java.util.Map'.(¼è½Òşÿÿÿÿ
+I
+java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ
+7
+java:S1170"!Make this final field static too.(ú –¼
+T	java:S106†"9Replace this use of System.out or System.err by a logger.(È»•ÿÿÿÿÿ
+O	java:S106©"9Replace this use of System.out or System.err by a logger.(†›Ş‹
+[
+java:S1854µ"?Remove this useless assignment to local variable "columnCount".(òÎ¯Œùÿÿÿÿ
+T	java:S106º"9Replace this use of System.out or System.err by a logger.(ÍĞŞúÿÿÿÿ
+L
+java:S1481µ"0Remove this unused "columnCount" local variable.(òÎ¯Œùÿÿÿÿ

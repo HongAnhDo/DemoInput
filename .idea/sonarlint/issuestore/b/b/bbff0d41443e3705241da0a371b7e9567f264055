@@ -1,45 +1,44 @@
 
->
-java:S1643"Use a StringBuilder instead.(¬ĞëÅûÿÿÿÿ8›ãÚ¿Ú.
-U	java:S106"9Replace this use of System.out or System.err by a logger.(ÃÚŠ­8›ãÚ¿Ú.
-Z
-java:S1197W"8Move the array designator from the variable to the type.(Ÿ“¦úüÿÿÿÿ8›ãÚ¿Ú.
-C	java:S131j""Add a default case to this switch.(ÔÖõÂøÿÿÿÿ8›ãÚ¿Ú.
-i
-java:S1192H"GDefine a constant instead of duplicating this literal "nghÃ¬n" 3 times.(Ò²ø³üÿÿÿÿ8âùÓËÚ.
-?
-java:S1643—"Use a StringBuilder instead.(‡Ë¿åûÿÿÿÿ8›ãÚ¿Ú.
-m
-java:S1301|"KReplace this "switch" statement by "if" statements to increase readability.(ÔÖõÂøÿÿÿÿ8›ãÚ¿Ú.
-O
-java:S1199s"-Extract this nested code block into a method.(ğÁ–Óûÿÿÿÿ8›ãÚ¿Ú.
-n	java:S117§"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍŞ§8›ãÚ¿Ú.
-9
-java:S16437"Use a StringBuilder instead.(Ò³áÄ8›ãÚ¿Ú.
-o	java:S100Q"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒÈ™¼øÿÿÿÿ8âùÓËÚ.
-Z
-java:S1197\"8Move the array designator from the variable to the type.(¨ËËÁıÿÿÿÿ8›ãÚ¿Ú.
-n
-java:S1301…"KReplace this "switch" statement by "if" statements to increase readability.(ÔÖõÂøÿÿÿÿ8›ãÚ¿Ú.
-O
-java:S1199m"-Extract this nested code block into a method.(·ÿ½äûÿÿÿÿ8›ãÚ¿Ú.
-†
-java:S3039¡"cRefactor this "substring" call; it will result in an "StringIndexOutOfBounds" exception at runtime.(¿—º¶üÿÿÿÿ8›ãÚ¿Ú.
-n	java:S117¦"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©»›î8›ãÚ¿Ú.
-9
-java:S1643("Use a StringBuilder instead.(ÆÙ§8›ãÚ¿Ú.
-Z
-java:S1197U"8Move the array designator from the variable to the type.(¾û¼ ûÿÿÿÿ8âùÓËÚ.
-w
-java:S2293§"YReplace the type specification in this constructor call with the diamond operator ("<>").(ÍŞ§8›ãÚ¿Ú.
-9
-java:S16432"Use a StringBuilder instead.(Ò³áÄ8›ãÚ¿Ú.
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(êÇ×Éşÿÿÿÿ8›ãÚ¿Ú.
-[	java:S106¡"9Replace this use of System.out or System.err by a logger.(¿—º¶üÿÿÿÿ8›ãÚ¿Ú.
-U	java:S106"9Replace this use of System.out or System.err by a logger.(ŠÚ¬ä8›ãÚ¿Ú.
 P
-java:S1199†"-Extract this nested code block into a method.(Í‡¬‰úÿÿÿÿ8›ãÚ¿Ú.
-t
-java:S3776Q"RRefactor this method to reduce its Cognitive Complexity from 32 to the 15 allowed.(ÒÈ™¼øÿÿÿÿ8âùÓËÚ.
+java:S1199"-Extract this nested code block into a method.(Í‡¬‰úÿÿÿÿ8›ãÚ¿Ú.
+†
+java:S3039¨"cRefactor this "substring" call; it will result in an "StringIndexOutOfBounds" exception at runtime.(¿—º¶üÿÿÿÿ8›ãÚ¿Ú.
+n
+java:S1301€"KReplace this "switch" statement by "if" statements to increase readability.(ÔÖõÂøÿÿÿÿ8›ãÚ¿Ú.
+9
+java:S1643/"Use a StringBuilder instead.(Ò³áÄ8›ãÚ¿Ú.
+9
+java:S1643%"Use a StringBuilder instead.(ÆÙ§8›ãÚ¿Ú.
 ?
-java:S1643¸"Use a StringBuilder instead.(­ÿšúÿÿÿÿ8ó¥Ü¿Ú.
+java:S1643Ÿ"Use a StringBuilder instead.(‡Ë¿åûÿÿÿÿ8›ãÚ¿Ú.
+[	java:S106¨"9Replace this use of System.out or System.err by a logger.(¿—º¶üÿÿÿÿ8›ãÚ¿Ú.
+Z
+java:S1197W"8Move the array designator from the variable to the type.(¨ËËÁıÿÿÿÿ8›ãÚ¿Ú.
+O
+java:S1199n"-Extract this nested code block into a method.(ğÁ–Óûÿÿÿÿ8›ãÚ¿Ú.
+9
+java:S16434"Use a StringBuilder instead.(Ò³áÄ8›ãÚ¿Ú.
+m
+java:S1301w"KReplace this "switch" statement by "if" statements to increase readability.(ÔÖõÂøÿÿÿÿ8›ãÚ¿Ú.
+Z
+java:S1197P"8Move the array designator from the variable to the type.(¾û¼ ûÿÿÿÿ8âùÓËÚ.
+i
+java:S1192C"GDefine a constant instead of duplicating this literal "nghÃ¬n" 3 times.(Ò²ø³üÿÿÿÿ8âùÓËÚ.
+O
+java:S1199h"-Extract this nested code block into a method.(·ÿ½äûÿÿÿÿ8›ãÚ¿Ú.
+C	java:S131e""Add a default case to this switch.(ÔÖõÂøÿÿÿÿ8›ãÚ¿Ú.
+n
+java:S1301"KReplace this "switch" statement by "if" statements to increase readability.(ÔÖõÂøÿÿÿÿ8Š…¹–Û.
+P
+java:S1199"-Extract this nested code block into a method.(Í‡¬‰úÿÿÿÿ8Š…¹–Û.
+g	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¾öàßùÿÿÿÿ8Š…¹–Û.
+W
+java:S1118":Add a private constructor to hide the implicit public one.(™·»8Š…¹–Û.
+o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾öàßùÿÿÿÿ8Š…¹–Û.
+Q
+java:S1172"/Remove this unused method parameter "document".(¾öàßùÿÿÿÿ8Š…¹–Û.
+j	java:S100L"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘®‰Ç8Š…¹–Û.
+o
+java:S3776L"RRefactor this method to reduce its Cognitive Complexity from 42 to the 15 allowed.(‘®‰Ç8Š…¹–Û.
+Z
+java:S1197R"8Move the array designator from the variable to the type.(Ÿ“¦úüÿÿÿÿ8Š…¹–Û.
