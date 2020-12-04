@@ -115,7 +115,7 @@ public class Application extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 pane.getViewport().removeAll();
-                pane.setViewportView(new PanelBaoCao());
+                pane.setViewportView(new PanelBaoCaoThamDinh());
                 revalidate();
                 repaint();
             }
@@ -147,7 +147,7 @@ public class Application extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 pane.getViewport().removeAll();
-                pane.setViewportView(new PanelThamDinh());
+                pane.setViewportView(new PanelNghiemThu());
                 revalidate();
                 repaint();
             }

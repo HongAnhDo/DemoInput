@@ -17,6 +17,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.InputStream;
 import java.net.URL;
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -276,9 +277,8 @@ public class PanelChungThu extends JPanel {
     }
 
     private void handleSaveFileDocOrPdf(HashMap<String, String> mapData, String fileToSave, boolean isPDF) {
-        XWPFDocument doc = null;
-        URL resource = getClass().getClassLoader().getResource("ct.docx");
-        MyHandle.handleSaveFile(mapData, fileToSave, isPDF, resource);
+        InputStream fis = getClass().getClassLoader().getResourceAsStream("ct.docx");
+        MyHandle.handleSaveFile(mapData, fileToSave, isPDF, fis);
     }
 
     private void addEventHandleChangePrice() {

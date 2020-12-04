@@ -426,7 +426,7 @@ public class DataBody {
         List<DataBody> dataBodyList = new ArrayList<>();
 
         List<String> contents = Arrays.asList(
-                "date_today",
+                "<<date_today>>",
                 "<<hd_num_contract>>",
                 "<<hd_today>>",
                 "<<ct_num_contract>>",
@@ -502,7 +502,7 @@ public class DataBody {
                 "Giá trị hợp đồng thực tế bằng chữ",
                 "Số tiền đã tạm ứng",
                 "Số tiền cần phải thanh toán",
-                "Số tiền cần phải thanh toán"
+                "Số tiền cần phải thanh toán bằng chữ"
         );
 
         LocalDate currentdate = LocalDate.now();

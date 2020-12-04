@@ -69,7 +69,7 @@ public class MyUtil {
         }
 
 
-        return sReturn;
+        return sReturn.concat(" chẵn");
     }
 
     // Khoi tao ham Read

@@ -14,9 +14,6 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.*;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.List;
@@ -107,15 +104,6 @@ public class MyHandle {
             } else if (jComponent instanceof JDatePickerImpl) {
                 JDatePickerImpl jDatePicker = (JDatePickerImpl) jComponent;
                 value = jDatePicker.getJFormattedTextField().getText();
-                if (value != "") {
-                    try {
-                       String  valueFormat = "ngày "+ value.substring(0,2) + " tháng "
-                               +value.substring(3,5) +" năm " + value.substring(6, 10);
-                       value = valueFormat;
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
             }
             mapData.put(key, value.trim());
             System.out.println(key + " : " + value);
@@ -123,30 +111,38 @@ public class MyHandle {
         return mapData;
     }
 
+    public static String getDateTodayFormat(String value) {
+        if (value != null && !value.equals("")) {
+            try {
+                String valueFormat = "ngày " + value.substring(0, 2) + " tháng "
+                        + value.substring(3, 5) + " năm " + value.substring(6, 10);
+
+                value = valueFormat;
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }else {
+            value = "";
+        }
+        return value;
+    }
+
     public static void handleSaveFile(HashMap<String, String> mapData,
                                       String fileToSave, boolean isPDF,
-                                      URL resource) {
-        File file = null;
+                                      InputStream fis) {
         XWPFDocument doc = null;
         try {
-            file = new File(resource.toURI());
-            doc = openDocument(file);
+            doc = openDocument(fis);
         } catch (Exception ex) {
             System.out.println(ex);
             ex.printStackTrace();
-            try {
-                showMessageDialog(null, "Có lỗi xảy ra" + resource.toURI().getPath());
-            } catch (URISyntaxException e) {
-                e.printStackTrace();
-            }
+            showMessageDialog(null, "Có lỗi xảy ra" + ex.getMessage());
+
             return;
         }
         if (doc == null) {
-            try {
-                showMessageDialog(null, "Có lỗi xảy ra "+  resource.toURI().getPath());
-            } catch (URISyntaxException e) {
-                e.printStackTrace();
-            }
+            showMessageDialog(null, "Có lỗi xảy ra ");
+
             return;
         }
         doc = replaceListText(doc, mapData);
@@ -185,13 +181,12 @@ public class MyHandle {
     }
 
     public static void handleSaveFileBC(HashMap<String, String> mapData,
-                                      String fileToSave, boolean isPDF,
-                                      URL resource, String pathKs) {
+                                        String fileToSave, boolean isPDF,
+                                        InputStream fis, String pathKs) {
         File file = null;
         XWPFDocument doc = null;
         try {
-            file = new File(resource.toURI());
-            doc = openDocument(file);
+            doc = openDocument(fis);
         } catch (Exception ex) {
             System.out.println(ex);
             ex.printStackTrace();
@@ -239,13 +234,11 @@ public class MyHandle {
 
     public static void handleSaveFileKS(HashMap<String, String> mapData,
                                         String fileToSave, boolean isPDF,
-                                        URL resource, String phaply, List<DataTable> listPT,
+                                        InputStream fis, String phaply, List<DataTable> listPT,
                                         List<DataTable> listThongso, String hientrang) {
-        File file = null;
         XWPFDocument doc = null;
         try {
-            file = new File(resource.toURI());
-            doc = openDocument(file);
+            doc = openDocument(fis);
         } catch (Exception ex) {
             System.out.println(ex);
             ex.printStackTrace();
@@ -476,6 +469,10 @@ public class MyHandle {
             for (XWPFTableRow row : tbl.getRows()) {
                 for (XWPFTableCell cell : row.getTableCells()) {
                     for (XWPFParagraph p : cell.getParagraphs()) {
+                        System.out.println(p.getText());
+                        if(p.getText().contains("<<date_today>>")){
+                            System.out.println("??????");
+                        }
                         for (XWPFRun r : p.getRuns()) {
                             replaceText(mapData, r);
                         }
@@ -509,8 +506,7 @@ public class MyHandle {
         }
     }
 
-    public static XWPFDocument openDocument(File file) throws Exception {
-        InputStream fis = new FileInputStream(file);
+    public static XWPFDocument openDocument(InputStream fis) throws Exception {
         XWPFDocument document = new XWPFDocument(fis);
         return document;
     }
@@ -518,13 +514,13 @@ public class MyHandle {
     private void copyTable(XWPFTable source, XWPFTable target) {
         target.getCTTbl().setTblPr(source.getCTTbl().getTblPr());
         target.getCTTbl().setTblGrid(source.getCTTbl().getTblGrid());
-        for (int r = 0; r<source.getRows().size(); r++) {
+        for (int r = 0; r < source.getRows().size(); r++) {
             XWPFTableRow targetRow = target.createRow();
             XWPFTableRow row = source.getRows().get(r);
             targetRow.getCtRow().setTrPr(row.getCtRow().getTrPr());
-            for (int c=0; c<row.getTableCells().size(); c++) {
+            for (int c = 0; c < row.getTableCells().size(); c++) {
                 //newly created row has 1 cell
-                XWPFTableCell targetCell = c==0 ? targetRow.getTableCells().get(0) : targetRow.createCell();
+                XWPFTableCell targetCell = c == 0 ? targetRow.getTableCells().get(0) : targetRow.createCell();
                 XWPFTableCell cell = row.getTableCells().get(c);
                 targetCell.getCTTc().setTcPr(cell.getCTTc().getTcPr());
                 XmlCursor cursor = targetCell.getParagraphArray(0).getCTP().newCursor();
@@ -543,7 +539,7 @@ public class MyHandle {
                     }
                 }
                 //newly created cell has one default paragraph we need to remove
-                targetCell.removeParagraph(targetCell.getParagraphs().size()-1);
+                targetCell.removeParagraph(targetCell.getParagraphs().size() - 1);
             }
         }
         //newly created table has one row by default. we need to remove the default row.
@@ -552,7 +548,7 @@ public class MyHandle {
 
     private void copyParagraph(XWPFParagraph source, XWPFParagraph target) {
         target.getCTP().setPPr(source.getCTP().getPPr());
-        for (int i=0; i<source.getRuns().size(); i++ ) {
+        for (int i = 0; i < source.getRuns().size(); i++) {
             XWPFRun run = source.getRuns().get(i);
             XWPFRun targetRun = target.createRun();
             //copy formatting

@@ -17,6 +17,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.InputStream;
 import java.net.URL;
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -262,10 +263,10 @@ public class PanelBcKhaoSat extends JPanel {
 
     private void handleSaveFileDocOrPdf(HashMap<String, String> mapData,
                                         String fileToSave, boolean isPDF) {
-        XWPFDocument doc = null;
-        URL resource = getClass().getClassLoader().getResource("ks.docx");
+        InputStream fis = getClass().getClassLoader().getResourceAsStream("ks.docx");
+
         JTextArea tfPhapLy = (JTextArea) arrJComponents.get(arrJComponents.size() -1);
-        MyHandle.handleSaveFileKS(mapData, fileToSave, isPDF, resource,tfPhapLy.getText(), pnTablePT.getValueOfTable(), pnTableThongso.getValueOfTable(), tfHienTrang.getText());
+        MyHandle.handleSaveFileKS(mapData, fileToSave, isPDF, fis,tfPhapLy.getText(), pnTablePT.getValueOfTable(), pnTableThongso.getValueOfTable(), tfHienTrang.getText());
     }
 
     private void addEventHandleChangePrice() {

@@ -8,7 +8,6 @@ import had.com.model.DataBody;
 import net.sourceforge.jdatepicker.impl.JDatePanelImpl;
 import net.sourceforge.jdatepicker.impl.JDatePickerImpl;
 import net.sourceforge.jdatepicker.impl.UtilDateModel;
-import org.apache.poi.xwpf.usermodel.XWPFDocument;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -19,12 +18,14 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 public class PanelHopDong  extends JPanel {
     private Color colorBackground = Color.WHITE;
@@ -254,6 +255,8 @@ public class PanelHopDong  extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 HashMap<String, String> mapData = MyHandle.getValueFormHashMap(arrJComponents);
+                String today = mapData.get("<<bc_today>>");
+                mapData.put("<<date_today>>", MyHandle.getDateTodayFormat(today));
 
                 JFrame parentFrame = new JFrame();
 
@@ -273,9 +276,9 @@ public class PanelHopDong  extends JPanel {
     }
 
     private void handleSaveFileDocOrPdf(HashMap<String, String> mapData, String fileToSave, boolean isPDF) {
-        XWPFDocument doc = null;
-        URL resource = getClass().getClassLoader().getResource("file01.docx");
-        MyHandle.handleSaveFile(mapData, fileToSave, isPDF, resource);
+
+        InputStream fis = getClass().getClassLoader().getResourceAsStream("file01.docx");
+        MyHandle.handleSaveFile(mapData, fileToSave, isPDF, fis);
     }
 
     private void addEventHandleChangePrice() {
